@@ -6,7 +6,8 @@ COPY package.json package-lock.json /app/
 
 RUN npm install
 
-COPY ./src /app/src/
+COPY ./client /app/client/
+COPY ./server /app/server/
 
 EXPOSE 3000
 
