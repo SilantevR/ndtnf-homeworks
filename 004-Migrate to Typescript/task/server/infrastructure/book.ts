@@ -1,6 +1,6 @@
-import { BookDto, BookI } from "./types";
+import { BookDto, BookI } from '../types';
 
-export class Book implements BookI {
+class Book implements BookI {
   id: string;
 
   title: string;
@@ -17,3 +17,5 @@ export class Book implements BookI {
     this.authors = book.authors;
   }
 }
+
+export default Book;

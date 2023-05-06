@@ -1,18 +1,17 @@
-import { injectable } from "inversify";
-import "reflect-metadata";
+import { injectable } from 'inversify';
+import 'reflect-metadata';
 
-import { Book } from "./book";
-import { BookDto, BookI } from "../types";
-import { BookModel } from "../models/book";
+import Book from './book';
+import { BookDto, BookI } from '../types';
+import BookModel from '../models/book';
 
 @injectable()
-export class BookRepository {
+export default class BookRepository {
   async createBook(bookData: BookDto) {
     try {
       const book = await BookModel.create(new Book(bookData));
       return book;
     } catch (err) {
-      console.log(err);
       return null;
     }
   }
@@ -22,7 +21,6 @@ export class BookRepository {
       const book = await BookModel.findById(id);
       return book;
     } catch (err) {
-      console.log(err);
       return null;
     }
   }
@@ -32,7 +30,6 @@ export class BookRepository {
       const books = await BookModel.find();
       return books;
     } catch (err) {
-      console.log(err);
       return null;
     }
   }
@@ -40,22 +37,20 @@ export class BookRepository {
   async updateBook(id: string, bookData: Partial<BookI>) {
     try {
       const book = await BookModel.findByIdAndUpdate(id, bookData, {
-        returnDocument: "after",
+        returnDocument: 'after',
       });
       return book;
     } catch (err) {
-      console.log(err);
       return null;
     }
   }
 
   async deleteBook(id: string) {
     try {
-      const book = await BookModel.findByIdAndDelete(id);
+      await BookModel.findByIdAndDelete(id);
       const books = await BookModel.find();
       return books;
     } catch (err) {
-      console.log(err);
       return null;
     }
   }
