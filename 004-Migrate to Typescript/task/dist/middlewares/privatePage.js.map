@@ -1,1 +1,0 @@
-{"version":3,"file":"privatePage.js","sourceRoot":"","sources":["../../server/middlewares/privatePage.ts"],"names":[],"mappings":";;AAEA,MAAM,WAAW,GAAG,CAAC,GAAY,EAAE,GAAa,EAAE,IAAkB,EAAE,EAAE,CAAC,CAAC,GAAG,CAAC,eAAe,EAAE,CAAC,CAAC,CAAC,IAAI,EAAE,CAAC,CAAC,CAAC,GAAG,CAAC,QAAQ,CAAC,aAAa,CAAC,CAAC,CAAC;AAExI,kBAAe,WAAW,CAAC"}
